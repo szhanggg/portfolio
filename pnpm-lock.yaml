@@ -8,6 +8,9 @@ dependencies:
   '@astrojs/tailwind':
     specifier: ^4.0.0
     version: 4.0.0(astro@2.10.12)(tailwindcss@3.3.3)
+  '@studio-freight/lenis':
+    specifier: ^1.0.19
+    version: 1.0.19
   astro:
     specifier: ^2.10.12
     version: 2.10.12
@@ -827,6 +830,10 @@ packages:
       open: 9.1.0
       picocolors: 1.0.0
       tslib: 2.6.2
+    dev: false
+
+  /@studio-freight/lenis@1.0.19:
+    resolution: {integrity: sha512-0DZdjDaJqhYVxzcbj6Dpv/BHS/RLc4f6XYu/n0t0fUKatuvO5vtXW4gW4GHgJPiPIpamct7bg8hpihbjZ6fqpw==}
     dev: false
 
   /@types/babel__core@7.20.1:

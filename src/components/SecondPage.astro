@@ -1,0 +1,40 @@
+<section class="w-full relative overflow-x-hidden mt-16 text-sf">
+  <div
+    class="timeline w-[5vw] md:w-[15vw] h-full bg-white dark:bg-darkbg absolute"
+  >
+    <div class="bullet"></div>
+  </div>
+  <section class="relative left-[5vw] md:left-[15vw] ml-4">
+    <div class="w-full font-sf text-md text-gray-400" id="projects">
+      projects
+    </div>
+    <div class="w-full flex flex-col my-[10vh]">
+      <figure class="w-3/4 md:w-1/2 md:ml-[20vw]">
+        <a href="https://www.mchackathon.org" target="_blank"
+          ><img src="/projects/mchackathon.png" class="object-cover" /></a
+        >
+        <figcaption class="text-center text-gray-400 font-sf text-sm mt-4 underline"><a href="https://www.mchackathon.org" target="_blank">MC Hackathon 2023 - Designed Website + Marketing Lead</a>
+        </figcaption>
+      </figure>
+    </div>
+  </section>
+</section>
+
+<style>
+  .timeline {
+    display: inline-block;
+    border-right: 1px solid var(--secondary);
+    z-index: 100;
+  }
+
+  .bullet {
+    width: 10px;
+    height: 10px;
+    background-color: var(--secondary);
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(50%, 100%);
+  }
+</style>
