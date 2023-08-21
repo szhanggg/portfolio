@@ -1,0 +1,59 @@
+---
+interface Props {
+  title: string;
+}
+
+const { title } = Astro.props;
+---
+
+<!DOCTYPE html>
+<html lang="en" class="dark">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="description" content="Stephen Zhang's Website" />
+    <meta name="viewport" content="width=device-width" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="generator" content={Astro.generator} />
+    <title>{title}</title>
+  </head>
+  <body class="text-black bg-white dark:text-white dark:bg-darkbg">
+    <slot />
+  </body>
+</html>
+
+<style is:global>
+  :root {
+    --primary: #0ea4e8;
+    --secondary: #f573b6;
+    --tertiary: #6267f1;
+    --darkbg: #0a1121;
+  }
+
+  @font-face {
+    font-family: "Gotham";
+    src: url("/fonts/GothamMedium.ttf");
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "Gotham";
+    src: url("/fonts/GothamBold.ttf");
+    font-weight: bold;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "SF Pro";
+    src: url("/fonts/SFPRODISPLAYBOLD.OTF");
+    font-weight: bold;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: "SF Pro";
+    src: url("/fonts/SFPRODISPLAYREGULAR.OTF");
+    font-weight: normal;
+    font-style: normal;
+  }
+</style>
