@@ -139,52 +139,20 @@ const { title } = Astro.props;
     "<0.5"
   );
 
-  gsap.from("figure", {
-    x: "-200%",
-    duration: 1,
-    opacity: 0,
-    scrollTrigger: {
-      trigger: "figure",
-      start: "top 80%",
-      end: "bottom 80%",
-      scrub: 1,
-    },
-  });
+  const projects = ["mchackathon", "onlyblair"];
 
-  gsap.from("#projects", {
-    x: -100,
-    duration: 0.5,
-    opacity: 0,
-    scrollTrigger: {
-      trigger: "#projects",
-      start: "top 90%",
-      end: "bottom 75%",
-      scrub: true,
-    },
-  });
-
-  gsap.from("#about", {
-    x: -100,
-    duration: 0.5,
-    opacity: 0,
-    scrollTrigger: {
-      trigger: "#about",
-      start: "top 90%",
-      end: "bottom 75%",
-      scrub: true,
-    },
-  });
-
-  gsap.from("#contact", {
-    x: -100,
-    duration: 0.5,
-    opacity: 0,
-    scrollTrigger: {
-      trigger: "#contact",
-      start: "top 90%",
-      end: "bottom 80%",
-      scrub: true,
-    },
+  projects.forEach((project) => {
+    gsap.from("#" + project, {
+      x: "-200%",
+      duration: 1,
+      opacity: 0,
+      scrollTrigger: {
+        trigger: "#" + project,
+        start: "top 80%",
+        end: "bottom 80%",
+        scrub: 1,
+      },
+    });
   });
 
   gsap.from("#about-header", {
@@ -227,9 +195,21 @@ const { title } = Astro.props;
 
   for (let navlink of Array.from(navlinks)) {
     navlink.addEventListener("click", (e) => {
-      e.preventDefault();
       let target = navlink.getAttribute("href");
+      e.preventDefault();
       lenis.scrollTo(target);
+    });
+    let target = navlink.getAttribute("href");
+    gsap.from(target, {
+      x: -100,
+      duration: 0.5,
+      opacity: 0,
+      scrollTrigger: {
+        trigger: target,
+        start: "top 90%",
+        end: "bottom 80%",
+        scrub: true,
+      },
     });
   }
 </script>
