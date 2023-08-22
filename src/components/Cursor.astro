@@ -1,0 +1,43 @@
+<div id="cursor"></div>
+<div id="cursor-inner"></div>
+
+<style>
+  #cursor {
+    width: var(--cursor-size);
+    height: var(--cursor-size);
+    border: 1px solid white;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    transition-duration: 200ms;
+    transition-timing-function: ease-out;
+    z-index: 9999;
+  }
+
+  #cursor-inner {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background-color: white;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+  }
+</style>
+
+<script>
+  const cursor = document.getElementById("cursor");
+  const cursorInner = document.getElementById("cursor-inner");
+
+  document.addEventListener("mousemove", (e) => {
+    cursor.style.left = e.pageX + "px";
+    cursor.style.top = e.pageY + "px";
+    cursorInner.style.left = e.pageX + "px";
+    cursorInner.style.top = e.pageY + "px";
+  });
+</script>
