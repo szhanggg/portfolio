@@ -200,6 +200,7 @@ const { title } = Astro.props;
       lenis.scrollTo(target);
     });
     let target = navlink.getAttribute("href");
+    if(target == "#start") continue;
     gsap.from(target, {
       x: -100,
       duration: 0.5,
