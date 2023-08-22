@@ -195,6 +195,7 @@ const { title } = Astro.props;
   });
 
   var navlinks = document.getElementsByClassName("navlink");
+  var done = [];
 
   for (let navlink of Array.from(navlinks)) {
     navlink.addEventListener("click", (e) => {
@@ -204,6 +205,9 @@ const { title } = Astro.props;
     });
     let target = navlink.getAttribute("href");
     if (target == "#start") continue;
+    if (done.includes(target)) continue;
+    done.push(target);
+    
     gsap.from(target, {
       x: -100,
       duration: 0.5,

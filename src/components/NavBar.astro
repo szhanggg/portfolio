@@ -1,9 +1,38 @@
-<nav class="h-[10vh] flex justify-between items-center font-sf px-4">
-  <h1 class="font-gotham text-3xl">Stephen</h1>
-  <div class="justify-between items-center gap-4 hidden md:flex">
-    <a class="hover:cursor-pointer navlink" href="#start">start</a>
-    <a class="hover:cursor-pointer navlink"href="#projects">projects</a>
-    <a class="hover:cursor-pointer navlink"href="#about">about</a>
-    <a class="hover:cursor-pointer navlink" href="#contact">contact</a>
+<nav class="h-[30vh] md:h-[10vh]">
+  <div class="h-[10vh] flex justify-between items-center font-sf px-4">
+      <h1 class="font-gotham text-3xl">Stephen</h1>
+      <div class="justify-between items-center gap-4 hidden md:flex">
+        <a class="navlink" href="#start">start</a>
+        <a class="navlink" href="#projects">projects</a>
+        <a class="navlink" href="#about">about</a>
+        <a class="navlink" href="#contact">contact</a>
+      </div>
+      <button class="md:hidden" id="navbarbutton">
+        <img src="/navbar.svg" alt="navbar" />
+      </button>
+  </div>
+  <div class="md:hidden h-[20vh] w-full grid grid-rows-4 grid-cols-1 relative pb-4 text-center">
+    <a class="navlink" href="#start">start</a>
+    <a class="navlink" href="#projects">projects</a>
+    <a class="navlink" href="#about">about</a>
+    <a class="navlink" href="#contact">contact</a>
+    <div class="absolute bottom-0 w-full bg-white dark:bg-darkbg transition-all duration-300" id="navcover" />
   </div>
 </nav>
+
+<script>
+    const navcover = document.getElementById('navcover');
+    const navbarbutton = document.getElementById('navbarbutton');
+    navcover.style.height = '100%';
+
+    navbarbutton.addEventListener('click', () => {
+        if(navcover.style.height == 0 || navcover.style.height == '0px') {
+            navcover.style.height = '100%';
+            return;
+        } else {
+            navcover.style.height = 0;
+            return;
+        }
+    })
+    
+</script>
