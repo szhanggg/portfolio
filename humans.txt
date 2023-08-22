@@ -1,0 +1,22 @@
+/* TEAM */
+
+Made with love by Stephen Zhang
+                        [...]
+						
+
+							
+/* THANKS */
+
+Took heavy inspiration from:
+https://yasio.dev/
+https://www.vijayrs.com/						
+
+                        [...]
+
+
+                            
+/* SITE */
+
+Developed with AstroJS
+
+Libraries: gsap, scrolltrigger, tailwind
