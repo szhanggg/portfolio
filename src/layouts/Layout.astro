@@ -16,7 +16,7 @@ const { title } = Astro.props;
     <meta name="generator" content={Astro.generator} />
     <title>{title}</title>
   </head>
-  <body class="text-black bg-white dark:text-white dark:bg-darkbg">
+  <body class="text-black bg-white dark:text-white dark:bg-darkbg overflow-x-hidden">
     <slot />
   </body>
 </html>
@@ -207,7 +207,7 @@ const { title } = Astro.props;
     if (target == "#start") continue;
     if (done.includes(target)) continue;
     done.push(target);
-    
+
     gsap.from(target, {
       x: -100,
       duration: 0.5,
