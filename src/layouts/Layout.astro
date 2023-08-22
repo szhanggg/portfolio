@@ -104,7 +104,6 @@ const { title } = Astro.props;
 
   var t1 = gsap.timeline();
 
-  t1.set("#fp-name", { opacity: 0 });
   t1.from(
     "#timeline",
     {
@@ -114,7 +113,6 @@ const { title } = Astro.props;
     },
     ">"
   );
-  t1.set("#fp-name", {opacity: 1 }, "<0.5");
   t1.from(
     "#start",
     {
@@ -128,7 +126,7 @@ const { title } = Astro.props;
   t1.from(
     "#fp-name",
     {
-      x: "-110%",
+      x: "-70vw",
       duration: 1,
     },
     "<0.5"
