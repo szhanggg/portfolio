@@ -94,14 +94,17 @@ const { title } = Astro.props;
   import gsap from "gsap";
   import { ScrollTrigger } from "gsap/ScrollTrigger";
 
-  const lenis = new Lenis();
+  var lenis;
+  if (window.innerWidth > 768) {
+    lenis = new Lenis();
 
-  function raf(time) {
-    lenis.raf(time);
+    function raf(time) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
     requestAnimationFrame(raf);
   }
-
-  requestAnimationFrame(raf);
 
   gsap.registerPlugin(ScrollTrigger);
 
@@ -201,7 +204,11 @@ const { title } = Astro.props;
     navlink.addEventListener("click", (e) => {
       let target = navlink.getAttribute("href");
       e.preventDefault();
-      lenis.scrollTo(target);
+      if (window.innerWidth > 768) {
+        lenis.scrollTo(target);
+      } else {
+        document.getElementById(target.substring(1)).scrollIntoView();
+      }
     });
     let target = navlink.getAttribute("href");
     if (target == "#start") continue;
