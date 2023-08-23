@@ -215,6 +215,8 @@ const { title } = Astro.props;
     if (done.includes(target)) continue;
     done.push(target);
 
+    document.getElementById(target.substring(1)).classList.add("will-change-transform");
+
     gsap.from(target, {
       x: -100,
       duration: 0.5,
