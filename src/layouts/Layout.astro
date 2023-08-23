@@ -17,7 +17,9 @@ const { title } = Astro.props;
     <link rel="author" href="humans.txt" />
     <title>{title}</title>
   </head>
-  <body class="text-black bg-white dark:text-white dark:bg-darkbg overflow-x-hidden">
+  <body
+    class="text-black bg-white dark:text-white dark:bg-darkbg overflow-x-hidden"
+  >
     <slot />
   </body>
 </html>
@@ -105,6 +107,8 @@ const { title } = Astro.props;
 
   var t1 = gsap.timeline();
 
+  t1.set("#fp-name", { visibility: "hidden" });
+  t1.set("#fp-sub", { visibility: "hidden" });
   t1.from(
     "#timeline",
     {
@@ -119,10 +123,11 @@ const { title } = Astro.props;
     {
       x: "-100",
       duration: 0.5,
-      opacity: 0,
     },
     "<"
   );
+  t1.set("#fp-name", { visibility: "visible" }, "<0.3");
+  t1.set("#fp-sub", { visibility: "visible" }, "<0.3");
 
   t1.from(
     "#fp-name",
@@ -137,7 +142,6 @@ const { title } = Astro.props;
     {
       x: "-110%",
       duration: 1,
-      opacity: 0,
     },
     "<0.5"
   );
@@ -148,7 +152,6 @@ const { title } = Astro.props;
     gsap.from("#" + project, {
       x: "-200%",
       duration: 1,
-      opacity: 0,
       scrollTrigger: {
         trigger: "#" + project,
         start: "top 80%",
@@ -172,7 +175,6 @@ const { title } = Astro.props;
   gsap.from("#about-text1", {
     x: "-100%",
     duration: 0.5,
-    opacity: 0,
     scrollTrigger: {
       trigger: "#about-text1",
       start: "top 90%",
@@ -184,7 +186,6 @@ const { title } = Astro.props;
   gsap.from("#about-text2", {
     x: "-100%",
     duration: 0.5,
-    opacity: 0,
     scrollTrigger: {
       trigger: "#about-text2",
       start: "top 90%",
@@ -210,7 +211,6 @@ const { title } = Astro.props;
     gsap.from(target, {
       x: -100,
       duration: 0.5,
-      opacity: 0,
       scrollTrigger: {
         trigger: target,
         start: "top 90%",
