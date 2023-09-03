@@ -175,27 +175,18 @@ const { title } = Astro.props;
     },
   });
 
-  gsap.from("#about-text1", {
-    x: "-100%",
-    duration: 0.5,
-    scrollTrigger: {
-      trigger: "#about-text1",
-      start: "top 90%",
-      end: "bottom 75%",
-      scrub: true,
-    },
-  });
-
-  gsap.from("#about-text2", {
-    x: "-100%",
-    duration: 0.5,
-    scrollTrigger: {
-      trigger: "#about-text2",
-      start: "top 90%",
-      end: "bottom 75%",
-      scrub: true,
-    },
-  });
+  for (const x of [...Array(5).keys()]) {
+    gsap.from("#about-text" + (x + 1), {
+      x: "-100%",
+      duration: 0.5,
+      scrollTrigger: {
+        trigger: "#about-text" + (x + 1),
+        start: "top 90%",
+        end: "bottom 75%",
+        scrub: true,
+      },
+    });
+  }
 
   var navlinks = document.getElementsByClassName("navlink");
   var done = [];
@@ -215,7 +206,9 @@ const { title } = Astro.props;
     if (done.includes(target)) continue;
     done.push(target);
 
-    document.getElementById(target.substring(1)).classList.add("will-change-transform");
+    document
+      .getElementById(target.substring(1))
+      .classList.add("will-change-transform");
 
     gsap.from(target, {
       x: -100,
