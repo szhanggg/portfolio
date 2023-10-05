@@ -116,7 +116,7 @@ const { title } = Astro.props;
     "#timeline",
     {
       height: 0,
-      duration: 2,
+      duration: 3,
       ease: "ease-in",
     },
     ">"
@@ -127,7 +127,7 @@ const { title } = Astro.props;
       x: "-100",
       duration: 0.5,
     },
-    "<"
+    "<+1"
   );
   t1.set("#fp-name", { visibility: "visible" }, "<0.3");
   t1.set("#fp-sub", { visibility: "visible" }, "<0.3");
@@ -138,7 +138,7 @@ const { title } = Astro.props;
       x: "-150%",
       duration: 1,
     },
-    "<0.3"
+    "<"
   );
   t1.from(
     "#fp-sub",
